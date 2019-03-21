@@ -8,11 +8,11 @@ $ac = new webAppController();
 if($route == 'home') {
   $ac->home();
 }
-elseif($route == 'signup') {
-  $ac->signup();
-}
 elseif($route == 'about') {
   $ac->about();
+}
+elseif($route == 'signup') {
+  $ac->signup();
 }
 else {
   echo 'Page Not Found';
