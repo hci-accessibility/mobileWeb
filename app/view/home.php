@@ -15,7 +15,7 @@
       <button class="mediumbtn" style="width: 80%; margin:auto; margin-top:30px;"><a href="signup">Visiting</a></button>
       <button class="mediumbtn" style="width: 80%; margin:auto; margin-top:20px;"><a href="signup">Returning</a></button>
       <button class="mediumbtn" style="width: 80%; margin:auto; margin-top:20px;"><a href="signup">First Time</a></button>
-      <button class="largebtn" style="width: 70%; margin:auto; margin-top:40px;">Report Barrier</button>
+      <button class="largebtn" style="width: 70%; margin:auto; margin-top:40px;"><a href="report">Report Barrier</a></button>
     </div>
   </body>
 </html>

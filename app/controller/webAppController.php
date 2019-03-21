@@ -14,6 +14,9 @@ elseif($route == 'about') {
 elseif($route == 'signup') {
   $ac->signup();
 }
+elseif($route == 'report') {
+  $ac->report();
+}
 else {
   echo 'Page Not Found';
 }
@@ -42,5 +45,13 @@ class webAppController {
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/signup.php';
     //include_once SYSTEM_PATH.'/view/footer.php';
+  }
+
+  public function report() {
+    $pageTitle = 'Report a Physical Barrier';
+    $styleSheet = 'styles.css';
+    include_once SYSTEM_PATH.'/view/header.php';
+    include_once SYSTEM_PATH.'/view/reportbarrier.php';
+    //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
 }
