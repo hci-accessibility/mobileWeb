@@ -8,6 +8,9 @@ $ac = new webAppController();
 if($route == 'home') {
   $ac->home();
 }
+elseif($route == 'about') {
+  $ac->about();
+}
 elseif($route == 'signup') {
   $ac->signup();
 }
@@ -22,6 +25,14 @@ class webAppController {
     $styleSheet = 'styles.css';
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/home.php';
+    //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
+  }
+
+  public function about() {
+    $pageTitle = 'About Us';
+    $styleSheet = 'styles.css';
+    include_once SYSTEM_PATH.'/view/header.php';
+    include_once SYSTEM_PATH.'/view/about.php';
     //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
 

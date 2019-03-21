@@ -4,3 +4,4 @@ RewriteEngine on
 
 RewriteRule ^home/?$ app/controller/webAppController.php?route=home
 RewriteRule ^signup/?$ app/controller/webAppController.php?route=signup
+RewriteRule ^about/?$ app/controller/webAppController.php?route=about
