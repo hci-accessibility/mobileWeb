@@ -1,0 +1,17 @@
+.smallbtn{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  /* margin-left: 30px;
+  margin-right: 30px; */
+}
+.mediumbtn{
+  margin:auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#list-group{
+  max-height: 300px;
+  margin-bottom: 10px;
+  overflow:scroll;
+  -webkit-overflow-scrolling: touch;
+}
