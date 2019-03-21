@@ -3,4 +3,6 @@ Options -Indexes
 RewriteEngine on
 
 RewriteRule ^home/?$ app/controller/webAppController.php?route=home
+RewriteRule ^home2/?$ app/controller/webAppController.php?route=home2
 RewriteRule ^signup/?$ app/controller/webAppController.php?route=signup
+RewriteRule ^about/?$ app/controller/webAppController.php?route=about
