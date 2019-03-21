@@ -14,6 +14,11 @@ elseif($route == 'about') {
 elseif($route == 'signup') {
   $ac->signup();
 }
+
+elseif($route == 'signin') {
+  $ac->signin();
+}
+
 else {
   echo 'Page Not Found';
 }
@@ -41,6 +46,14 @@ class webAppController {
     $styleSheet = 'styles.css';
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/signup.php';
+    //include_once SYSTEM_PATH.'/view/footer.php';
+  }
+
+  public function signin() {
+    $pageTitle = 'Sign In';
+    $styleSheet = 'styles.css';
+    include_once SYSTEM_PATH.'/view/header.php';
+    include_once SYSTEM_PATH.'/view/signin.php';
     //include_once SYSTEM_PATH.'/view/footer.php';
   }
 }
