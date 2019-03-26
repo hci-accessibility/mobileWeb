@@ -5,6 +5,7 @@ RewriteRule ^home/?$ app/controller/webAppController.php?route=home
 RewriteRule ^signup/?$ app/controller/webAppController.php?route=signup
 RewriteRule ^about/?$ app/controller/webAppController.php?route=about
 RewriteRule ^report/?$ app/controller/webAppController.php?route=report
+RewriteRule ^navigate/?$ app/controller/webAppController.php?route=navigation
 
 RewriteRule ^home2/?$ app/controller/webAppController.php?route=home2
 RewriteRule ^/?$ app/controller/webAppController.php?route=home2
