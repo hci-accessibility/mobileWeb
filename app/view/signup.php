@@ -40,7 +40,47 @@
       <div><h2 style = "background-color: 0000FF">Please check all that applies (it will be private to you)</h2></div>
       <div>
         <form>
-          <fieldset data-role="controlgroup">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c1" id="c1">
+            <label class="custom-control-label" for="c1">Wheelchair User</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c2" id="c2">
+            <label class="custom-control-label" for="c2">Crohn's Disease</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c3" id="c3">
+            <label class="custom-control-label" for="c3">ALS</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c4" id="c4">
+            <label class="custom-control-label" for="c4">Arthritis</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c5" id="c5">
+            <label class="custom-control-label" for="c5">Arm Amputee</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c6" id="c6">
+            <label class="custom-control-label" for="c6">Leg Amputee</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c7" id="c7">
+            <label class="custom-control-label" for="c7">Cane User</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c8" id="c8">
+            <label class="custom-control-label" for="c8">Walker User</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c9" id="c9">
+            <label class="custom-control-label" for="c9">Muscle Weakness</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c10" id="c10">
+            <label class="custom-control-label" for="c10">Noise Sensitivity</label>
+          </div>
+          <!-- <fieldset data-role="controlgroup">
             <input type="checkbox" name="c1" id="c1">
             <label for="c1">Wheelchair User</label>
             <input type="checkbox" name="c2" id="c2">
@@ -60,18 +100,21 @@
             <input type="checkbox" name="c9" id="c9">
             <label for="c9">Muscle Weakness</label>
             <input type="checkbox" name="c10" id="c10">
-            <label for="c10">Noise Sensitivity</label>
+            <label for="c10">Noise Sensitivity</label> -->
             <!-- <input type ="button" name = submitbutton id = "submitbutton" value = "Submit"> -->
 
-          </fieldset>
+          <!-- </fieldset> -->
           <div><h2 style = "background-color: 0000FF">Please review the fields and edit information</h2></div>
           <div>
             <h5>Body Dimensions (including navigation equipment - e.g. wheelchair)</h5>
-            <label for="width">width: </label>
-            <input type="text" name="width" id="width"/>
-            <label for="depth">depth: </label>
-            <input type="text" name="depth" id="depth"/>
-
+            <div style="margin-bottom: 5px;">
+              <label for="width">width: </label>
+              <input type="text" class="form-control" style="width: 200px; display: inline;" name="width" id="width"/>
+            </div>
+            <div>
+              <label for="depth">depth: </label>
+              <input type="text" class="form-control" style="width: 200px; display: inline;" name="depth" id="depth"/>
+            </div>
           </div>
           <div>
             <h5>Noise Sensitivity</h5>

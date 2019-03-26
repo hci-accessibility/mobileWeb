@@ -1,4 +1,4 @@
-
+Options -Indexes
 RewriteEngine on
 
 RewriteRule ^home/?$ app/controller/webAppController.php?route=home

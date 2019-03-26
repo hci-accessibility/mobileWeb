@@ -12,7 +12,7 @@
         <a class="nav-link" href="home2">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="signup">Preferences <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="signup">Preferences</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="browse">Browse Locations</a>
