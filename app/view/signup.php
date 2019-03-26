@@ -9,6 +9,32 @@
   </head> -->
 
   <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="home2">Campus Map</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="about">About </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="home2">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="signup">Preferences <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="browse">Browse Locations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="report">Report a Barrier</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
     <div data-role="page" id = "pageone">
       <h2>Campus Navigation Preferences</h2>
       <div><h2 style = "background-color: 0000FF">Please check all that applies (it will be private to you)</h2></div>
@@ -62,7 +88,7 @@
             <input type="checkbox" name="handrails" id="handrails" checked data-toggle="toggle" data-size="small">
 
           </div>
-          <input type ="button" name = submitbutton id = "submitbutton" value = "Submit and Navigate">
+          <input type ="submit" name = "submitbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Submit and Navigate">
         </form>
       </div>
 

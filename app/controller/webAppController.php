@@ -43,7 +43,7 @@ class webAppController {
   public function home2() {
     $pageTitle = 'Home';
     $styleSheet = 'styles.css';
-    include_once SYSTEM_PATH.'/view/header.php';
+    //include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/home2.php';
     //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
