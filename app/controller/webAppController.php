@@ -14,6 +14,9 @@ elseif($route == 'home2') {
 elseif($route == 'about') {
   $ac->about();
 }
+elseif($route == 'browse') {
+  $ac->browse();
+}
 elseif($route == 'signup') {
   $ac->signup();
 }
@@ -47,6 +50,14 @@ class webAppController {
     $styleSheet = 'styles.css';
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/about.php';
+    //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
+  }
+
+  public function browse() {
+    $pageTitle = 'About Us';
+    $styleSheet = 'styles.css';
+    //include_once SYSTEM_PATH.'/view/header.php';
+    include_once SYSTEM_PATH.'/view/browselocations.php';
     //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
 
