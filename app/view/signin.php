@@ -7,6 +7,6 @@
 
 </form>
 
-    forgot code? <br>
+    <p></p>forgot code? <a href="signup"></p> <br>
 </body>
 </html>

@@ -29,7 +29,7 @@ class webAppController {
     $pageTitle = 'Home';
     $styleSheet = 'styles.css';
     include_once SYSTEM_PATH.'/view/header.php';
-    include_once SYSTEM_PATH.'/view/home.php';
+    include_once SYSTEM_PATH.'/view/home2.html';
     //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
 
