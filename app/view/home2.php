@@ -9,15 +9,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
-    <style>
-      /* body { margin:0; padding:0; }
-      #map { position:absolute; top:0; bottom:0; width:100%; } */
-    </style>
     <title>Campus Accessibility Map</title>
   </head>
+
   <body style = "background-color: #888888;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Campus Map</a>
+      <a class="navbar-brand" href="home2">Campus Map</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -27,13 +24,16 @@
             <a class="nav-link" href="about">About </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="home2">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup">Preferences</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="browse">Browse Locations</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Preferences</a>
+            <a class="nav-link" href="report">Report a Barrier</a>
           </li>
         </ul>
       </div>
