@@ -26,9 +26,6 @@ elseif($route == '') {
 elseif($route == 'report') {
   $ac->report();
 }
-elseif($route == 'navigate') {
-  $ac->navigate();
-}
 else {
   echo 'Page Not Found';
 }
@@ -63,7 +60,7 @@ class webAppController {
   public function browse() {
     $pageTitle = 'About Us';
     $styleSheet = 'styles.css';
-    include_once SYSTEM_PATH.'/view/header.php';
+    //include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/browselocations.php';
     //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
@@ -83,13 +80,4 @@ class webAppController {
     include_once SYSTEM_PATH.'/view/reportbarrier.php';
     //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
-
-  public function navigate() {
-    $pageTitle = 'Navigate';
-    $styleSheet = 'styles.css';
-    include_once SYSTEM_PATH.'/view/header.php';
-    include_once SYSTEM_PATH.'/view/navigation.php';
-    //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
-  }
-
 }
