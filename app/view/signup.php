@@ -7,7 +7,7 @@
     <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <link rel = "stylesheet" href = "styles.css">
   </head> -->
-  
+
   <body>
     <div data-role="page" id = "pageone">
       <h2>Guest User</h2>

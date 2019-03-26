@@ -8,17 +8,18 @@ $ac = new webAppController();
 if($route == 'home') {
   $ac->home();
 }
+elseif($route == 'home2') {
+  $ac->home2();
+}
 elseif($route == 'about') {
   $ac->about();
 }
 elseif($route == 'signup') {
   $ac->signup();
 }
-
-elseif($route == 'signin') {
-  $ac->signin();
+elseif($route == 'report') {
+  $ac->report();
 }
-
 else {
   echo 'Page Not Found';
 }
@@ -30,6 +31,14 @@ class webAppController {
     $styleSheet = 'styles.css';
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/home2.html';
+    //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
+  }
+
+  public function home2() {
+    $pageTitle = 'Home';
+    $styleSheet = 'styles.css';
+    include_once SYSTEM_PATH.'/view/header.php';
+    include_once SYSTEM_PATH.'/view/home2.php';
     //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
 
@@ -49,11 +58,11 @@ class webAppController {
     //include_once SYSTEM_PATH.'/view/footer.php';
   }
 
-  public function signin() {
-    $pageTitle = 'Sign In';
+  public function report() {
+    $pageTitle = 'Report a Physical Barrier';
     $styleSheet = 'styles.css';
     include_once SYSTEM_PATH.'/view/header.php';
-    include_once SYSTEM_PATH.'/view/signin.php';
-    //include_once SYSTEM_PATH.'/view/footer.php';
+    include_once SYSTEM_PATH.'/view/reportbarrier.php';
+    //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
 }
