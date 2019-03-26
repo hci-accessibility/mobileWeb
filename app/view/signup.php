@@ -7,10 +7,10 @@
     <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <link rel = "stylesheet" href = "styles.css">
   </head> -->
-  
+
   <body>
     <div data-role="page" id = "pageone">
-      <h2>Guest User</h2>
+      <h2>Campus Navigation Preferences</h2>
       <div><h2 style = "background-color: 0000FF">Please check all that applies (it will be private to you)</h2></div>
       <div>
         <form>
@@ -35,9 +35,34 @@
             <label for="c9">Muscle Weakness</label>
             <input type="checkbox" name="c10" id="c10">
             <label for="c10">Noise Sensitivity</label>
-            <input type ="button" name = submitbutton id = "submitbutton" value = "Submit">
+            <!-- <input type ="button" name = submitbutton id = "submitbutton" value = "Submit"> -->
 
           </fieldset>
+          <div><h2 style = "background-color: 0000FF">Please review the fields and edit information</h2></div>
+          <div>
+            <h5>Body Dimensions (including navigation equipment - e.g. wheelchair)</h5>
+            <label for="width">width: </label>
+            <input type="text" name="width" id="width"/>
+            <label for="depth">depth: </label>
+            <input type="text" name="depth" id="depth"/>
+
+          </div>
+          <div>
+            <h5>Noise Sensitivity</h5>
+            <label for="noise">No need to avoid noise: 0</label>
+            <label for="noise">Avoid noisy areas: 100</label>
+            <input type="range" min="1" max="100" value="50" class="slider" name="noise" id="noise">
+
+          </div>
+          <div>
+            <h5>Avoid</h5>
+            <label for="stairs">Stairs</label>
+            <input type="checkbox" name="stairs" id="stairs" checked data-toggle="toggle" data-size="small">
+            <label for="handrails">Stairs without handrails</label>
+            <input type="checkbox" name="handrails" id="handrails" checked data-toggle="toggle" data-size="small">
+
+          </div>
+          <input type ="button" name = submitbutton id = "submitbutton" value = "Submit and Navigate">
         </form>
       </div>
 
