@@ -29,6 +29,9 @@ elseif($route == 'report') {
 elseif($route == 'navigation') {
   $ac->navigation();
 }
+elseif($route == 'submitbarrier') {
+  $ac->submitBarrier();
+}
 else {
   echo 'Page Not Found';
 }
@@ -89,6 +92,16 @@ class webAppController {
     $styleSheet = 'styles.css';
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/navigation.php';
+    //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
+  }
+
+  public function submitBarrier() {
+    $pageTitle = 'Barrier Submitted';
+    $styleSheet = 'styles.css';
+    include_once SYSTEM_PATH.'/view/header.php';
+
+    echo "barrier successfully submitted!";
+    //include_once SYSTEM_PATH.'/view/navigation.php';
     //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
 }

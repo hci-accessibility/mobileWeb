@@ -27,7 +27,7 @@
 
   <div>
     <h2>Location</h2>
-    <form action=""> <!--Need to add action later for where the form infomation should go? -->
+    <form  method="POST" action= "<?= BASE_URL ?>/submitbarrier"> <!--Need to add action later for where the form infomation should go? -->
       <div class="form-group">
         <h4>Building </h4>
         <select class="form-control form-control-lg" style = "max-height:150px;" id="fromForm">
