@@ -19,31 +19,5 @@
 
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="home2">Campus Map</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="about">About </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="home2">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="signup">Preferences</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="browse">Browse Locations<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="report">Report a Barrier</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-  </head>
+    <!-- <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
+</head>
