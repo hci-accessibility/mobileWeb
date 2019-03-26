@@ -1,19 +1,16 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<html lang="en">
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
-
-  <title>Campus Accessibility Map</title>
-</head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <title>Campus Accessibility Map</title>
+  </head>
 
   <body style = "background-color: #888888;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -23,20 +20,20 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="about">About </a>
+          </li>
           <li class="nav-item active">
-            <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="home2">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="browselocations.html">Browse Locations</a>
+            <a class="nav-link" href="signup">Preferences</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="browse">Browse Locations</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="report">Report a Barrier</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.php">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="report">Report A Barrier</a>
           </li>
         </ul>
       </div>

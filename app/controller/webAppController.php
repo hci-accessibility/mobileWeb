@@ -20,6 +20,9 @@ elseif($route == 'browse') {
 elseif($route == 'signup') {
   $ac->signup();
 }
+elseif($route == '') {
+  $ac->home2();
+}
 elseif($route == 'report') {
   $ac->report();
 }
@@ -45,13 +48,6 @@ class webAppController {
     //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
 
-  public function home2() {
-    $pageTitle = 'Home';
-    $styleSheet = 'styles.css';
-    //include_once SYSTEM_PATH.'/view/header.php';
-    include_once SYSTEM_PATH.'/view/home2.php';
-    //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
-  }
 
   public function about() {
     $pageTitle = 'About Us';
