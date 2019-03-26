@@ -10,3 +10,5 @@ RewriteRule ^navigate/?$ app/controller/webAppController.php?route=navigation
 RewriteRule ^home2/?$ app/controller/webAppController.php?route=home2
 RewriteRule ^/?$ app/controller/webAppController.php?route=home2
 RewriteRule ^browse/?$ app/controller/webAppController.php?route=browse
+
+RewriteRule ^submitbarrier/?$ app/controller/webAppController.php?route=submitbarrier
