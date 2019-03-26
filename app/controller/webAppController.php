@@ -8,6 +8,9 @@ $ac = new webAppController();
 if($route == 'home') {
   $ac->home();
 }
+elseif($route == 'home2') {
+  $ac->home2();
+}
 elseif($route == 'about') {
   $ac->about();
 }
@@ -28,6 +31,14 @@ class webAppController {
     $styleSheet = 'styles.css';
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/home.php';
+    //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
+  }
+
+  public function home2() {
+    $pageTitle = 'Home';
+    $styleSheet = 'styles.css';
+    //include_once SYSTEM_PATH.'/view/header.php';
+    include_once SYSTEM_PATH.'/view/home2.php';
     //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
 
