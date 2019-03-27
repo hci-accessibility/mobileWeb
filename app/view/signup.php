@@ -119,8 +119,9 @@
           <div>
             <h5>Noise Sensitivity</h5>
             <label for="noise">No need to avoid noise: 0</label>
-            <label for="noise">Avoid noisy areas: 100</label>
-            <input type="range" min="1" max="100" value="50" class="slider" name="noise" id="noise">
+            <label for="noise" style="float: right;">Avoid noisy areas: 100</label>
+            <input type="range" class="custom-range" min="0" max="100" />
+            <!-- <input type="range" min="1" max="100" value="50" class="slider" name="noise" id="noise"> -->
 
           </div>
           <div>
