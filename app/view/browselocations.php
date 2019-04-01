@@ -69,7 +69,7 @@ Current Location
 <button type="button" class="list-group-item list-group-item-action">Major Williams Hall</button>
 <button type="button" class="list-group-item list-group-item-action">Mcbryde Hall</button>
 </ul> -->
-<form action = "home2">
+<form action = "navigate">
   <div class="form-group">
     <h4>From </h4>
     <select class="form-control form-control-lg" style = "max-height:150px;" id="fromForm">

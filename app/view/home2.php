@@ -12,6 +12,7 @@
     <title>Campus Accessibility Map</title>
   </head>
 
+  
   <body style = "background-color: #888888;">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -39,6 +40,8 @@
         </ul>
       </div>
     </nav>
+
+
 
     <!--Google map-->
     <!-- <div id="map-container-google-2" class="map-container" style="height: 100%; width: 100%">
