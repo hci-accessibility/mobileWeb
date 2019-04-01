@@ -20,6 +20,9 @@ elseif($route == 'browse') {
 elseif($route == 'signup') {
   $ac->signup();
 }
+elseif($route == 'signupprocess') {
+  $ac->signupProcess();
+}
 elseif($route == '') {
   $ac->home2();
 }
@@ -77,6 +80,48 @@ class webAppController {
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/signup.php';
     //include_once SYSTEM_PATH.'/view/footer.php';
+  }
+
+  public function signupProcess() {
+    $disabilityList = array ();
+    if( isset($_POST['c']) && is_array($_POST['c']) ) {
+      foreach($_POST['c'] as $disability) {
+          $disabilityList[] = $disability;
+          //echo "$disability";
+      }
+    }
+    $width = $_POST['width'];
+    $depth = $_POST['depth'];
+    $noise = $_POST['noiseSensitivity'];
+    if (isset($_POST['stairs'])) {
+      $stairs = $_POST['stairs'];
+    }
+    else {
+      $stairs = "off";
+    }
+    //echo $stairs;
+    $handrails = "off";
+    if (isset($_POST['handrails'])) {
+      $handrails = $_POST['handrails'];
+    }
+    //echo $handrails;
+    $disabilityList[] = $width;
+    $disabilityList[] = $depth;
+    $disabilityList[] = $noise;
+    $disabilityList[] = $stairs;
+    $disabilityList[] = $handrails;
+
+    //Hashes the entire list into one string
+    $cookieString = md5(print_r($disabilityList, true));
+    //echo $cookieString;
+
+    //Hashed string becomes cookie value
+    $cookie_value = $cookieString;
+    //echo $cookie_value;
+
+    //Setting cookie, returns 1 if set successfully
+    $cookie = setcookie('user',$cookie_value, time() + 30*24*3600, '/');
+    //echo $cookie;
   }
 
   public function report() {
