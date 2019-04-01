@@ -39,8 +39,48 @@
       <h2>Campus Navigation Preferences</h2>
       <div><h2 style = "background-color: 0000FF">Please check all that applies (it will be private to you)</h2></div>
       <div>
-        <form>
-          <fieldset data-role="controlgroup">
+        <form method="POST" action="<?= BASE_URL ?>/signup/process">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c[]" value="wheelchair" id="c1">
+            <label class="custom-control-label" for="c1">Wheelchair User</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c[]" value="crohn" id="c2">
+            <label class="custom-control-label" for="c2">Crohn's Disease</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c[]" value="als" id="c3">
+            <label class="custom-control-label" for="c3">ALS</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c[]" value="arthritis" id="c4">
+            <label class="custom-control-label" for="c4">Arthritis</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c[]" value="armamputee" id="c5">
+            <label class="custom-control-label" for="c5">Arm Amputee</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c[]" value="legamputee" id="c6">
+            <label class="custom-control-label" for="c6">Leg Amputee</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c[]" value="cane" id="c7">
+            <label class="custom-control-label" for="c7">Cane User</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c[]" value="walker" id="c8">
+            <label class="custom-control-label" for="c8">Walker User</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c[]" value="muscleweak" id="c9">
+            <label class="custom-control-label" for="c9">Muscle Weakness</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" name="c[]" value="noise" id="c10">
+            <label class="custom-control-label" for="c10">Noise Sensitivity</label>
+          </div>
+          <!-- <fieldset data-role="controlgroup">
             <input type="checkbox" name="c1" id="c1">
             <label for="c1">Wheelchair User</label>
             <input type="checkbox" name="c2" id="c2">
@@ -60,32 +100,36 @@
             <input type="checkbox" name="c9" id="c9">
             <label for="c9">Muscle Weakness</label>
             <input type="checkbox" name="c10" id="c10">
-            <label for="c10">Noise Sensitivity</label>
+            <label for="c10">Noise Sensitivity</label> -->
             <!-- <input type ="button" name = submitbutton id = "submitbutton" value = "Submit"> -->
 
-          </fieldset>
+          <!-- </fieldset> -->
           <div><h2 style = "background-color: 0000FF">Please review the fields and edit information</h2></div>
           <div>
             <h5>Body Dimensions (including navigation equipment - e.g. wheelchair)</h5>
-            <label for="width">width: </label>
-            <input type="text" name="width" id="width"/>
-            <label for="depth">depth: </label>
-            <input type="text" name="depth" id="depth"/>
-
+            <div style="margin-bottom: 5px;">
+              <label for="width">width: </label>
+              <input type="text" class="form-control" style="width: 200px; display: inline;" name="width" id="width"/>
+            </div>
+            <div>
+              <label for="depth">depth: </label>
+              <input type="text" class="form-control" style="width: 200px; display: inline;" name="depth" id="depth"/>
+            </div>
           </div>
           <div>
             <h5>Noise Sensitivity</h5>
             <label for="noise">No need to avoid noise: 0</label>
-            <label for="noise">Avoid noisy areas: 100</label>
-            <input type="range" min="1" max="100" value="50" class="slider" name="noise" id="noise">
+            <label for="noise" style="float: right;">Avoid noisy areas: 100</label>
+            <input type="range" class="custom-range" min="0" max="100" name="noiseSensitivity" />
+            <!-- <input type="range" min="1" max="100" value="50" class="slider" name="noise" id="noise"> -->
 
           </div>
           <div>
             <h5>Avoid</h5>
             <label for="stairs">Stairs</label>
-            <input type="checkbox" name="stairs" id="stairs" checked data-toggle="toggle" data-size="small">
+            <input type="checkbox" name="stairs" value="stairs" id="stairs" checked data-toggle="toggle" data-size="small">
             <label for="handrails">Stairs without handrails</label>
-            <input type="checkbox" name="handrails" id="handrails" checked data-toggle="toggle" data-size="small">
+            <input type="checkbox" name="handrails" value="handrails" id="handrails" checked data-toggle="toggle" data-size="small">
 
           </div>
           <input type ="submit" name = "submitbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Submit and Navigate">

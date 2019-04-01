@@ -1,4 +1,4 @@
-
+Options -Indexes
 RewriteEngine on
 
 RewriteRule ^home/?$ app/controller/webAppController.php?route=home
@@ -10,5 +10,6 @@ RewriteRule ^navigate/?$ app/controller/webAppController.php?route=navigation
 RewriteRule ^home2/?$ app/controller/webAppController.php?route=home2
 RewriteRule ^/?$ app/controller/webAppController.php?route=home2
 RewriteRule ^browse/?$ app/controller/webAppController.php?route=browse
+RewriteRule ^signup/process/?$ app/controller/webAppController.php?route=signupprocess
 
 RewriteRule ^submitbarrier/?$ app/controller/webAppController.php?route=submitbarrier
