@@ -67,13 +67,15 @@ class webAppController {
   }
 
   public function browse() {
+    ob_start();
     $pageTitle = 'About Us';
     $styleSheet = 'styles.css';
     //include_once SYSTEM_PATH.'/view/header.php';
-    include_once SYSTEM_PATH.'/view/browselocations.php';
     if (!isset($_COOKIE['user'])) {
       header('Location:'.BASE_URL.'/signup/');
     }
+    include_once SYSTEM_PATH.'/view/browselocations.php';
+
     //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
 
