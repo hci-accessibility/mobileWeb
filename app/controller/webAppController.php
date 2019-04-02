@@ -127,6 +127,7 @@ class webAppController {
     //Setting cookie, returns 1 if set successfully
     $cookie = setcookie('user',$cookie_value, time() + 30*24*3600, '/');
     //echo $cookie;
+    header('Location:'.BASE_URL.'/browse/');
   }
 
   public function report() {
