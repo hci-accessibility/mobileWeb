@@ -1,14 +1,4 @@
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 
-    <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <link rel = "stylesheet" href = "styles.css">
-  </head> -->
-
-  <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="home2">Campus Map</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,9 +6,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="about">About </a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="home2">Home</a>
         </li>
@@ -30,6 +17,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="report">Report a Barrier</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about">About </a>
         </li>
       </ul>
     </div>
@@ -137,5 +127,3 @@
       </div>
 
     </div>
-  </body>
-</html>

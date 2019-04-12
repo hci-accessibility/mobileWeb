@@ -46,15 +46,15 @@ class webAppController {
     $styleSheet = 'styles.css';
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/home2.php';
-    //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
+    include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
 
   public function home2() {
     $pageTitle = 'Home';
     $styleSheet = 'styles.css';
-    //include_once SYSTEM_PATH.'/view/header.php';
+    include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/home2.php';
-    //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
+    include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
 
 
@@ -63,20 +63,20 @@ class webAppController {
     $styleSheet = 'styles.css';
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/about.php';
-    //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
+    include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
 
   public function browse() {
     ob_start();
     $pageTitle = 'About Us';
     $styleSheet = 'styles.css';
-    //include_once SYSTEM_PATH.'/view/header.php';
+    include_once SYSTEM_PATH.'/view/header.php';
     if (!isset($_COOKIE['user'])) {
-      header('Location:'.BASE_URL.'/signup/');
+      header('Location:'.BASE_URL.'signup/');
     }
     include_once SYSTEM_PATH.'/view/browselocations.php';
 
-    //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
+    include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
 
   public function signup() {
@@ -84,7 +84,7 @@ class webAppController {
     $styleSheet = 'styles.css';
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/signup.php';
-    //include_once SYSTEM_PATH.'/view/footer.php';
+    include_once SYSTEM_PATH.'/view/footer.php';
   }
 
   public function signupProcess() {
@@ -135,7 +135,7 @@ class webAppController {
     $styleSheet = 'styles.css';
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/reportbarrier.php';
-    //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
+    include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
 
   public function navigation() {
@@ -143,7 +143,7 @@ class webAppController {
     $styleSheet = 'styles.css';
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/navigation.php';
-    //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
+    include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
 
   public function submitBarrier() {
@@ -152,7 +152,7 @@ class webAppController {
     include_once SYSTEM_PATH.'/view/header.php';
 
     echo "barrier successfully submitted!";
-    //include_once SYSTEM_PATH.'/view/navigation.php';
-    //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
+    include_once SYSTEM_PATH.'/view/navigation.php';
+    include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
 }
