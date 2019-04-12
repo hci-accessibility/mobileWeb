@@ -134,11 +134,20 @@
         </form>
         <?php
         if (isset($_COOKIE['user'])) { ?>
-          <h2><?php echo $_COOKIE['user'] ?></h2>
+          <!-- <h2><?php echo $_COOKIE['user'] ?></h2> -->
           <button onclick="exportCookie()">Export Cookie</button>
 
         <?php }
         ?>
+      </div>
+      <div>
+        <?php
+        if (!isset($_COOKIE['user'])) { ?>
+          <form>
+            <input type="text" class="form-control" style="width: 200px; display: inline;" name="cookie" id="cookie" placeholder="Paste Cookie"/>
+            <input type="submit" name="cookiesubmit" value="Import Cookie">
+          </form>
+        <?php } ?>
       </div>
 
     </div>

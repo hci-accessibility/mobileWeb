@@ -25,19 +25,17 @@
       var copyCookie = "<?php echo $_COOKIE['user']; ?>";
       console.log(copyCookie);
 
-      /* Select the text field */
-      //copyCookie.select();
       document.body.append(copyCookie);
-      //copyCookie.setAttribute('value', text);
+
+      /* Select the text field */
       copyCookie.select();
 
 
       /* Copy the text inside the text field */
-      document.execCommand("copy");
-      //document.body.removeChild(copyCookie);
+      //document.execCommand("copy");
 
       /* Alert the copied text */
-      alert("Copied the Cookie: " + copyCookie.value);
+      //alert("Copied the Cookie: " + copyCookie.value);
 
     }
     </script>
