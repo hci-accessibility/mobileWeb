@@ -85,6 +85,11 @@ class webAppController {
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/signup.php';
     //include_once SYSTEM_PATH.'/view/footer.php';
+    if (isset($_COOKIE['user'])) {
+      $cookie_name = 'user';
+      //echo '<script>console.log($_COOKIE[$cookie_name])</script>';
+
+    }
   }
 
   public function signupProcess() {
@@ -96,8 +101,8 @@ class webAppController {
       }
     }
     $width = $_POST['width'];
-    $depth = $_POST['depth'];
-    $noise = $_POST['noiseSensitivity'];
+    $depth = $_POST['length'];
+    $slope = $_POST['maxslope'];
     if (isset($_POST['stairs'])) {
       $stairs = $_POST['stairs'];
     }
@@ -105,16 +110,36 @@ class webAppController {
       $stairs = "off";
     }
     //echo $stairs;
-    $handrails = "off";
-    if (isset($_POST['handrails'])) {
-      $handrails = $_POST['handrails'];
+    $narrowsteep = "off";
+    if (isset($_POST['narrowsteep'])) {
+      $narrowsteep = $_POST['narrowsteep'];
+    }
+    $pushdoors = "off";
+    if (isset($_POST['pushdoors'])) {
+      $pushdoors = $_POST['pushdoors'];
+    }
+    $heavydoor = "off";
+    if (isset($_POST['heavydoor'])) {
+      $heavydoor = $_POST['heavydoor'];
+    }
+    $loose = "off";
+    if (isset($_POST['loose'])) {
+      $loose = $_POST['loose'];
+    }
+    $uneven = "off";
+    if (isset($_POST['uneven'])) {
+      $uneven = $_POST['uneven'];
     }
     //echo $handrails;
     $disabilityList[] = $width;
-    $disabilityList[] = $depth;
-    $disabilityList[] = $noise;
+    $disabilityList[] = $length;
+    $disabilityList[] = $maxslope;
     $disabilityList[] = $stairs;
-    $disabilityList[] = $handrails;
+    $disabilityList[] = $narrowsteep;
+    $disabilityList[] = $pushdoors;
+    $disabilityList[] = $heavydoor;
+    $disabilityList[] = $loose;
+    $disabilityList[] = $uneven;
 
     //Hashes the entire list into one string
     $cookieString = md5(print_r($disabilityList, true));
@@ -125,7 +150,7 @@ class webAppController {
     //echo $cookie_value;
 
     //Setting cookie, returns 1 if set successfully
-    $cookie = setcookie('user',$cookie_value, time() + 30*24*3600, '/');
+    $cookie = setcookie('user',$cookie_value, time() + 30*86400, '/');
     //echo $cookie;
     header('Location:'.BASE_URL.'/browse/');
   }
