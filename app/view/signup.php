@@ -37,6 +37,13 @@
 
     <div data-role="page" id = "pageone">
       <h2>Campus Navigation Preferences</h2>
+      <div><h4 style = "background-color: 0000FF">If you have already filled this form, you can import your Cookie below</h4></div>
+      <div>
+          <form method="POST" action="<?= BASE_URL ?>/cookie/process">
+            <input type="text" class="form-control" style="width: 200px; display: inline;" name="cookie" id="cookie" placeholder="Paste Cookie"/>
+            <input type="submit" name="cookiesubmit" value="Import Cookie">
+          </form>
+      </div>
       <div><h2 style = "background-color: 0000FF">Please check all that applies (it will be private to you)</h2></div>
       <div>
         <form method="POST" action="<?= BASE_URL ?>/signup/process">
@@ -105,7 +112,7 @@
             </div>
             <div>
               <label for="maxslope">Maximum Traversible Slope: </label>
-              <input type="text" class="form-control" style="width: 200px; display: inline;" name="slope" id="slope" placeholder="insert dimensions in degrees"/>
+              <input type="text" class="form-control" style="width: 200px; display: inline;" name="maxslope" id="maxslope" placeholder="insert dimensions in degrees"/>
             </div>
           </div>
           <!-- <div>
@@ -139,15 +146,6 @@
 
         <?php }
         ?>
-      </div>
-      <div>
-        <?php
-        if (!isset($_COOKIE['user'])) { ?>
-          <form>
-            <input type="text" class="form-control" style="width: 200px; display: inline;" name="cookie" id="cookie" placeholder="Paste Cookie"/>
-            <input type="submit" name="cookiesubmit" value="Import Cookie">
-          </form>
-        <?php } ?>
       </div>
 
     </div>

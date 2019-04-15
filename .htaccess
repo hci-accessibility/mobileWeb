@@ -11,5 +11,7 @@ RewriteRule ^home2/?$ app/controller/webAppController.php?route=home2
 RewriteRule ^/?$ app/controller/webAppController.php?route=home2
 RewriteRule ^browse/?$ app/controller/webAppController.php?route=browse
 RewriteRule ^signup/process/?$ app/controller/webAppController.php?route=signupprocess
+RewriteRule ^cookie/process/?$ app/controller/webAppController.php?route=cookieprocess
+
 
 RewriteRule ^submitbarrier/?$ app/controller/webAppController.php?route=submitbarrier

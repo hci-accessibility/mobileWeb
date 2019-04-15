@@ -23,6 +23,9 @@ elseif($route == 'signup') {
 elseif($route == 'signupprocess') {
   $ac->signupProcess();
 }
+elseif($route == 'cookieprocess') {
+  $ac->cookieProcess();
+}
 elseif($route == '') {
   $ac->home2();
 }
@@ -67,7 +70,7 @@ class webAppController {
   }
 
   public function browse() {
-    ob_start();
+    //ob_start();
     $pageTitle = 'About Us';
     $styleSheet = 'styles.css';
     //include_once SYSTEM_PATH.'/view/header.php';
@@ -101,8 +104,8 @@ class webAppController {
       }
     }
     $width = $_POST['width'];
-    $depth = $_POST['length'];
-    $slope = $_POST['maxslope'];
+    $length = $_POST['length'];
+    $maxslope = $_POST['maxslope'];
     if (isset($_POST['stairs'])) {
       $stairs = $_POST['stairs'];
     }
@@ -141,6 +144,8 @@ class webAppController {
     $disabilityList[] = $loose;
     $disabilityList[] = $uneven;
 
+    header('Content-Type: application/json');
+    echo $json = json_encode($disabilityList);
     //Hashes the entire list into one string
     $cookieString = md5(print_r($disabilityList, true));
     //echo $cookieString;
@@ -152,6 +157,11 @@ class webAppController {
     //Setting cookie, returns 1 if set successfully
     $cookie = setcookie('user',$cookie_value, time() + 30*86400, '/');
     //echo $cookie;
+    header('Location:'.BASE_URL.'/browse/');
+  }
+
+  public function cookieProcess() {
+    $importedCookie = $_POST['cookie'];
     header('Location:'.BASE_URL.'/browse/');
   }
 
