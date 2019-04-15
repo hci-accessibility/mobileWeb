@@ -147,7 +147,7 @@ class webAppController {
     header('Content-Type: application/json');
     echo $json = json_encode($disabilityList);
     //Hashes the entire list into one string
-    $cookieString = md5(print_r($disabilityList, true));
+    $cookieString = md5(print_r($json, true));
     //echo $cookieString;
 
     //Hashed string becomes cookie value
