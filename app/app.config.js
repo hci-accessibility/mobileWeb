@@ -12,6 +12,9 @@ angular.
         when('/browselocations', {
           template: '<browse-locations></browse-locations>'
         }).
+        when('/about', {
+          template: '<about-page></about-page>'
+        }).
         otherwise('/home');
     }
   ]);

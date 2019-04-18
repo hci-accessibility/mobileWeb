@@ -3,5 +3,6 @@ angular.module('accessibilityApp', [
   'ngRoute',
   'preferences',
   'browseLocations',
-  'mainmap'
+  'mainmap',
+  'aboutPage'
 ]);
