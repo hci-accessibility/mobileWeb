@@ -17,19 +17,19 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="about">About </a>
+          <a class="nav-link" href="<?= BASE_URL?>/about">About </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="home2">Home</a>
+          <a class="nav-link" href="<?= BASE_URL?>/home2">Home</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="signup">Preferences <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="<?= BASE_URL?>/signup">Preferences <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="browse">Browse Locations</a>
+          <a class="nav-link" href="<?= BASE_URL?>/browse">Browse Locations</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="report">Report a Barrier</a>
+          <a class="nav-link" href="<?= BASE_URL?>/report">Report a Barrier</a>
         </li>
       </ul>
     </div>
