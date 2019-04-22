@@ -7,16 +7,20 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="home2">Home</a>
+        <a class="nav-link" href="<?= BASE_URL?>/about">About </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="signup">Preferences</a>
+        <a class="nav-link" href="<?= BASE_URL?>/home2">Home</a>
+
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="browse">Browse Locations</a>
+        <a class="nav-link" href="<?= BASE_URL?>/signup">Preferences</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= BASE_URL?>/browse">Browse Locations</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="report">Report a Barrier<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="<?= BASE_URL?>/report">Report a Barrier<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="about">About </a>
@@ -27,7 +31,7 @@
 
   <div>
     <h2>Location</h2>
-    <form  method="POST" action= "<?= BASE_URL ?>/submitbarrier"> <!--Need to add action later for where the form infomation should go? -->
+    <form  method="POST" action= "<?= BASE_URL ?>/submitbarrier" style="background-color: #DCDCDC;"> <!--Need to add action later for where the form infomation should go? -->
       <div class="form-group">
         <h4>Building </h4>
         <select class="form-control form-control-lg" style = "max-height:150px;" id="fromForm">
@@ -69,11 +73,15 @@
         </select>
       </div>
       <h2>Issue</h2>
+<<<<<<< HEAD
       <textarea class="form-control" id="textArea" name="textArea" rows ="3" placeholder="Please briefly describe the issue here"></textarea>
       <h2>Authorized Users</h2>
       <textarea class = "form-control" id="authIdArea" name="authIdArea" rows = "1" placeholder="Authorized users enter id"></textarea>
+=======
+      <textarea id="textArea" name="textArea" placeholder="Please briefly describe the issue here..." style="width: 90%; margin:0.5%;"></textarea>
+>>>>>>> f733b4cc823ec58043f1f56d8bd7e374fd9b9e97
       <!-- Need to make this red-->
-      <p>*Your report will be sent to the office... and will be processed based on the severity/urgency of the issue, thank you.</p>
+      <p style="color:red;">*Your report will be sent to the office... and will be processed based on the severity/urgency of the issue, thank you.</p>
       <button type="submit" style = "margin-top: 15px;" class="btn btn-primary btn-lg btn-block mb-2">Submit Report</button>
 
     </form>
