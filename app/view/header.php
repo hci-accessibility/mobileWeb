@@ -19,6 +19,88 @@
         document.getElementById('cookiestuff').innerHTML = copyCookie;
 
       }
+
+      function preset(disability) {
+        if (disability == 'wheelchair') {
+          document.getElementById('width').value = "26";
+          document.getElementById('length').value = "42";
+          document.getElementById('maxslope').value = "45";
+          document.getElementById('stairs').checked = true;
+          document.getElementById('narrowsteep').checked = true;
+          document.getElementById('pushdoors').checked = true;
+          document.getElementById('heavydoor').checked = true;
+          document.getElementById('loose').checked = true;
+          document.getElementById('uneven').checked = true;
+
+        }
+        else if (disability == 'ewheelchair') {
+          document.getElementById('width').value = "26";
+          document.getElementById('length').value = "42";
+          document.getElementById('maxslope').value = "45";
+          document.getElementById('stairs').checked = true;
+          document.getElementById('narrowsteep').checked = true;
+          document.getElementById('pushdoors').checked = true;
+          document.getElementById('heavydoor').checked = true;
+          document.getElementById('loose').checked = true;
+          document.getElementById('uneven').checked = true;
+        }
+        else if (disability == 'armamputee') {
+          document.getElementById('width').value = "36";
+          document.getElementById('length').value = "33";
+          document.getElementById('maxslope').value = "";
+          document.getElementById('stairs').checked = false;
+          document.getElementById('narrowsteep').checked = false;
+          document.getElementById('pushdoors').checked = false;
+          document.getElementById('heavydoor').checked = true;
+          document.getElementById('loose').checked = false;
+          document.getElementById('uneven').checked = false;
+        }
+        else if (disability == 'legamputee') {
+          document.getElementById('width').value = "25";
+          document.getElementById('length').value = "33";
+          document.getElementById('maxslope').value = "";
+          document.getElementById('stairs').checked = true;
+          document.getElementById('narrowsteep').checked = true;
+          document.getElementById('pushdoors').checked = false;
+          document.getElementById('heavydoor').checked = true;
+          document.getElementById('loose').checked = true;
+          document.getElementById('uneven').checked = true;
+        }
+        else if (disability == 'cane') {
+          document.getElementById('width').value = "25";
+          document.getElementById('length').value = "39";
+          document.getElementById('maxslope').value = "";
+          document.getElementById('stairs').checked = false;
+          document.getElementById('narrowsteep').checked = true;
+          document.getElementById('pushdoors').checked = false;
+          document.getElementById('heavydoor').checked = true;
+          document.getElementById('loose').checked = true;
+          document.getElementById('uneven').checked = true;
+        }
+        else if (disability == 'walker') {
+          document.getElementById('width').value = "25";
+          document.getElementById('length').value = "64";
+          document.getElementById('maxslope').value = "";
+          document.getElementById('stairs').checked = true;
+          document.getElementById('narrowsteep').checked = true;
+          document.getElementById('pushdoors').checked = true;
+          document.getElementById('heavydoor').checked = true;
+          document.getElementById('loose').checked = true;
+          document.getElementById('uneven').checked = true;
+        }
+        else {
+          document.getElementById('width').value = "25";
+          document.getElementById('length').value = "35";
+          document.getElementById('maxslope').value = "";
+          document.getElementById('stairs').checked = false;
+          document.getElementById('narrowsteep').checked = true;
+          document.getElementById('pushdoors').checked = false;
+          document.getElementById('heavydoor').checked = false;
+          document.getElementById('loose').checked = true;
+          document.getElementById('uneven').checked = true;
+        }
+
+      }
     </script>
     <!-- <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
 </head>

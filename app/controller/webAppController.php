@@ -70,7 +70,7 @@ class webAppController {
   }
 
   public function browse() {
-    //ob_start();
+    ob_start();
     $pageTitle = 'About Us';
     $styleSheet = 'styles.css';
     //include_once SYSTEM_PATH.'/view/header.php';
