@@ -25,7 +25,8 @@
     </div>
   </nav>
 
-    <div>
+    <div style="background-color: #DCDCDC; width: 90%; margin-left:5%; margin-top:5%; padding:2%;">
+      <h2>About Us</h2>
       <p>(Purpose of this page: explaining the web app, something along those lines)</p>
       <p>This is a navigation aid for the disable Viginia Tech Community. It works just like your typical Maps App, but will only give you accessible routes.
       All users are anonymous to others and to the Virginia Tech Administration.</p>

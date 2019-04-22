@@ -27,7 +27,7 @@
 
   <div>
     <h2>Location</h2>
-    <form  method="POST" action= "<?= BASE_URL ?>/submitbarrier"> <!--Need to add action later for where the form infomation should go? -->
+    <form  method="POST" action= "<?= BASE_URL ?>/submitbarrier" style="background-color: #DCDCDC;"> <!--Need to add action later for where the form infomation should go? -->
       <div class="form-group">
         <h4>Building </h4>
         <select class="form-control form-control-lg" style = "max-height:150px;" id="fromForm">
@@ -69,9 +69,9 @@
         </select>
       </div>
       <h2>Issue</h2>
-      <textarea id="textArea" name="textArea" placeholder="Please briefly describe the issue here..."></textarea>
+      <textarea id="textArea" name="textArea" placeholder="Please briefly describe the issue here..." style="width: 90%; margin:0.5%;"></textarea>
       <!-- Need to make this red-->
-      <p>*Your report will be sent to the office... and will be processed based on the severity/urgency of the issue, thank you.</p>
+      <p style="color:red;">*Your report will be sent to the office... and will be processed based on the severity/urgency of the issue, thank you.</p>
       <button type="submit" style = "margin-top: 15px;" class="btn btn-primary btn-lg btn-block mb-2">Submit Report</button>
 
     </form>
