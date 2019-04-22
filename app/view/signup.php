@@ -1,13 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-
-    <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <link rel = "stylesheet" href = "styles.css">
-  </head> -->
-
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="home2">Campus Map</a>
@@ -144,12 +134,12 @@
           </div>
           <input type ="submit" name = "submitbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Submit and Navigate">
         </form>
+        <!-- The php condition is used to make sure this only appears if the user already has a cookie -->
         <?php
         if (isset($_COOKIE['user'])) { ?>
           <h4 style="margin-top: 5%;">You can export your Cookie to import it to your other devices</h4>
           <button onclick="exportCookie()" class="btn btn-primary btn-lg btn-block mb-2">Export Cookie</button>
           <div style="margin-top:1%; margin-bottom:1%;"><h3 id="cookiestuff" style="background-color: #DCDCDC; padding-left: 30%;"></h3></div>
-
         <?php }
         ?>
       </div>
