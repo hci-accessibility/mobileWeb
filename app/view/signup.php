@@ -27,48 +27,43 @@
 
     <div data-role="page" id = "pageone">
       <h2>Campus Navigation Preferences</h2>
+      <div><h4 style = "background-color: 0000FF">If you have already filled this form, you can import your Cookie below</h4></div>
+      <div>
+          <form method="POST" action="<?= BASE_URL ?>/cookie/process">
+            <input type="text" class="form-control" style="width: 200px; display: inline;" name="cookie" id="cookie" placeholder="Paste Cookie"/>
+            <input type="submit" name="cookiesubmit" value="Import Cookie">
+          </form>
+      </div>
       <div><h2 style = "background-color: 0000FF">Please check all that applies (it will be private to you)</h2></div>
       <div>
         <form method="POST" action="<?= BASE_URL ?>/signup/process">
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" name="c[]" value="wheelchair" id="c1">
-            <label class="custom-control-label" for="c1">Wheelchair User</label>
+            <label class="custom-control-label" for="c1">Regular Wheelchair User</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" name="c[]" value="crohn" id="c2">
-            <label class="custom-control-label" for="c2">Crohn's Disease</label>
+            <input type="checkbox" class="custom-control-input" name="c[]" value="ewheelchair" id="c2">
+            <label class="custom-control-label" for="c2">Electric Wheelchair User</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" name="c[]" value="als" id="c3">
-            <label class="custom-control-label" for="c3">ALS</label>
+            <input type="checkbox" class="custom-control-input" name="c[]" value="armamputee" id="c3">
+            <label class="custom-control-label" for="c3">Arm Amputee</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" name="c[]" value="arthritis" id="c4">
-            <label class="custom-control-label" for="c4">Arthritis</label>
+            <input type="checkbox" class="custom-control-input" name="c[]" value="legamputee" id="c4">
+            <label class="custom-control-label" for="c4">Leg Amputee</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" name="c[]" value="armamputee" id="c5">
-            <label class="custom-control-label" for="c5">Arm Amputee</label>
+            <input type="checkbox" class="custom-control-input" name="c[]" value="cane" id="c5">
+            <label class="custom-control-label" for="c5">Cane User</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" name="c[]" value="legamputee" id="c6">
-            <label class="custom-control-label" for="c6">Leg Amputee</label>
+            <input type="checkbox" class="custom-control-input" name="c[]" value="walker" id="c6">
+            <label class="custom-control-label" for="c6">Walker User</label>
           </div>
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" name="c[]" value="cane" id="c7">
-            <label class="custom-control-label" for="c7">Cane User</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" name="c[]" value="walker" id="c8">
-            <label class="custom-control-label" for="c8">Walker User</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" name="c[]" value="muscleweak" id="c9">
-            <label class="custom-control-label" for="c9">Muscle Weakness</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" name="c[]" value="noise" id="c10">
-            <label class="custom-control-label" for="c10">Noise Sensitivity</label>
+            <input type="checkbox" class="custom-control-input" name="c[]" value="dropfoot" id="c7">
+            <label class="custom-control-label" for="c7">Dropfoot</label>
           </div>
           <!-- <fieldset data-role="controlgroup">
             <input type="checkbox" name="c1" id="c1">
@@ -99,31 +94,48 @@
             <h5>Body Dimensions (including navigation equipment - e.g. wheelchair)</h5>
             <div style="margin-bottom: 5px;">
               <label for="width">width: </label>
-              <input type="text" class="form-control" style="width: 200px; display: inline;" name="width" id="width"/>
+              <input type="text" class="form-control" style="width: 200px; display: inline;" name="width" id="width" placeholder="insert dimensions in inches"/>
             </div>
             <div>
-              <label for="depth">depth: </label>
-              <input type="text" class="form-control" style="width: 200px; display: inline;" name="depth" id="depth"/>
+              <label for="length">length: </label>
+              <input type="text" class="form-control" style="width: 200px; display: inline;" name="length" id="length" placeholder="insert dimensions in inches"/>
+            </div>
+            <div>
+              <label for="maxslope">Maximum Traversible Slope: </label>
+              <input type="text" class="form-control" style="width: 200px; display: inline;" name="maxslope" id="maxslope" placeholder="insert dimensions in degrees"/>
             </div>
           </div>
-          <div>
+          <!-- <div>
             <h5>Noise Sensitivity</h5>
             <label for="noise">No need to avoid noise: 0</label>
             <label for="noise" style="float: right;">Avoid noisy areas: 100</label>
             <input type="range" class="custom-range" min="0" max="100" name="noiseSensitivity" />
-            <!-- <input type="range" min="1" max="100" value="50" class="slider" name="noise" id="noise"> -->
 
-          </div>
+          </div> -->
           <div>
             <h5>Avoid</h5>
             <label for="stairs">Stairs</label>
-            <input type="checkbox" name="stairs" value="stairs" id="stairs" checked data-toggle="toggle" data-size="small">
-            <label for="handrails">Stairs without handrails</label>
-            <input type="checkbox" name="handrails" value="handrails" id="handrails" checked data-toggle="toggle" data-size="small">
-
+            <input type="checkbox" name="stairs" value="stairs" id="stairs" data-size="small">
+            <label for="handrails">Narrow or Steep Stairs</label>
+            <input type="checkbox" name="narrowsteep" value="narrowsteep" id="narrowsteep" checked data-toggle="toggle" data-size="small">
+            <label for="handrails">Non-activated Doors</label>
+            <input type="checkbox" name="pushdoors" value="pushdoors" id="pushdoors" checked data-toggle="toggle" data-size="small">
+            <label for="handrails">Heavy Doors</label>
+            <input type="checkbox" name="heavydoor" value="heavydoor" id="heavydoor" checked data-toggle="toggle" data-size="small">
+            <label for="handrails">"Loose" Terrain (Shifts Under Foot)</label>
+            <input type="checkbox" name="loose" value="loose" id="loose" checked data-toggle="toggle" data-size="small">
+            <label for="handrails">Uneven Terrain</label>
+            <input type="checkbox" name="uneven" value="uneven" id="uneven" checked data-toggle="toggle" data-size="small">
           </div>
           <input type ="submit" name = "submitbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Submit and Navigate">
         </form>
+        <?php
+        if (isset($_COOKIE['user'])) { ?>
+          <!-- <h2><?php echo $_COOKIE['user'] ?></h2> -->
+          <button onclick="exportCookie()">Export Cookie</button>
+
+        <?php }
+        ?>
       </div>
 
     </div>
