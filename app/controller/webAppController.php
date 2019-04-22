@@ -77,6 +77,7 @@ class webAppController {
     if (!isset($_COOKIE['user'])) {
       header('Location:'.BASE_URL.'signup/');
     }
+    $buildings = Building::getBuildings();
     include_once SYSTEM_PATH.'/view/browselocations.php';
 
     include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created

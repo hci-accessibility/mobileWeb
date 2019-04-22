@@ -56,23 +56,15 @@ Current Location
 <form action = "home2">
   <div class="form-group">
     <h4>From </h4>
-    <select class="form-control form-control-lg" style = "max-height:150px;" id="fromForm">
-      <option>Current Location</option>
-      <option>Agnew Hall</option>
-      <option>Cowgill Hall</option>
-      <option>Davidson Hall</option>
-      <option>Derring Hall</option>
-      <option>Durham Hall</option>
-      <option>Goodwin Hall</option>
-      <option>Hahn Hall</option>
-      <option>Holden Hall</option>
-      <option>Latham Hall</option>
-      <option>Lavery Hall</option>
-      <option>Major Williams Hall</option>
-      <option>Mcbryde Hall</option>
-      <option>Turner Hall</option>
-
+    <select class="form-control form-control-lg" style = "max-height:150px;" id="buildingFromForm">
+      <?php foreach($buildings as $building){?>
+        <option data-id = "<?=$building->buildingId?>"><?=$building->name?></option>
+      <?php}?>
+      <!-- <option data-id="1">Agnew Hall</option>
+      <option data-id ="2">Cowgill Hall</option>
+      <option data-id = "3">Davidson Hall</option> -->
     </select>
+
   </div>
   <div class="form-group" style = "max-height:150px;">
     <h4>To </h4>
