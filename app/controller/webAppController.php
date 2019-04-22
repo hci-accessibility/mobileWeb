@@ -97,12 +97,14 @@ class webAppController {
 
   public function signupProcess() {
     $disabilityList = array ();
-    if( isset($_POST['c']) && is_array($_POST['c']) ) {
-      foreach($_POST['c'] as $disability) {
-          $disabilityList[] = $disability;
-          //echo "$disability";
-      }
-    }
+    // if( isset($_POST['c']) && is_array($_POST['c']) ) {
+    //   foreach($_POST['c'] as $disability) {
+    //       $disabilityList[] = $disability;
+    //       //echo "$disability";
+    //   }
+    // }
+
+    //Get the POST data from the form, php variable will read the value of the field otherwise set to "off"
     $width = $_POST['width'];
     $length = $_POST['length'];
     $maxslope = $_POST['maxslope'];
@@ -144,9 +146,11 @@ class webAppController {
     $disabilityList[] = $loose;
     $disabilityList[] = $uneven;
 
+    //Creates JSON object from the list
     header('Content-Type: application/json');
     echo $json = json_encode($disabilityList);
-    //Hashes the entire list into one string
+
+    //Hashes the entire JSON into one string
     $cookieString = md5(print_r($json, true));
     //echo $cookieString;
 
@@ -157,11 +161,16 @@ class webAppController {
     //Setting cookie, returns 1 if set successfully
     $cookie = setcookie('user',$cookie_value, time() + 30*86400, '/');
     //echo $cookie;
+
+    //Redirects user to the Browse page
     header('Location:'.BASE_URL.'/browse/');
   }
 
+  //When "Import Cookie" is clicked
   public function cookieProcess() {
+    //Get the pasted cookie in the field
     $importedCookie = $_POST['cookie'];
+    //Redirects user to the Browse page
     header('Location:'.BASE_URL.'/browse/');
   }
 
