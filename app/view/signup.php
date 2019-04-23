@@ -1,12 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <link rel = "stylesheet" href = "styles.css">
-  </head> -->
-
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="home2">Campus Map</a>
@@ -16,19 +7,19 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="about">About </a>
+          <a class="nav-link" href="<?= BASE_URL?>/about">About </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="home2">Home</a>
+          <a class="nav-link" href="<?= BASE_URL?>/home2">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="<?= BASE_URL?>/signup">Preferences <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="signup">Preferences <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="<?= BASE_URL?>/browse">Browse Locations</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="browse">Browse Locations</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="report">Report a Barrier</a>
+          <a class="nav-link" href="<?= BASE_URL?>/report">Report a Barrier</a>
         </li>
       </ul>
     </div>
@@ -48,27 +39,13 @@
       <div>
         <form method="POST" action="<?= BASE_URL ?>/signup/process">
 
-          <form>
-            <input type ="submit" name = "submitbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Wheelchair User">
-          </form>
-          <form>
-            <input type ="submit" name = "submitbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Electric Wheelchair User">
-          </form>
-          <form>
-            <input type ="submit" name = "submitbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Arm Amputee">
-          </form>
-          <form>
-            <input type ="submit" name = "submitbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Leg Amputee">
-          </form>
-          <form>
-            <input type ="submit" name = "submitbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Cane User">
-          </form>
-          <form>
-            <input type ="submit" name = "submitbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Walker User">
-          </form>
-          <form>
-            <input type ="submit" name = "submitbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Dropfoot">
-          </form>
+            <input type ="button" name = "presetbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Wheelchair User" onclick="return preset('wheelchair')">
+            <input type ="button" name = "presetbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Electric Wheelchair User" onclick="return preset('ewheelchair')">
+            <input type ="button" name = "presetbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Arm Amputee" onclick="return preset('armamputee')">
+            <input type ="button" name = "presetbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Leg Amputee" onclick="return preset('legamputee')">
+            <input type ="button" name = "presetbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Cane User" onclick="return preset('cane')">
+            <input type ="button" name = "presetbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Walker User" onclick="return preset('walker')">
+            <input type ="button" name = "presetbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Dropfoot" onclick="return preset('dropfoot')">
 
 
           <!-- <div class="custom-control custom-checkbox">
@@ -106,14 +83,17 @@
             <div style="margin-bottom: 5px;">
               <label for="width" style="display: inline-block; width: 200px; padding-left:5px">width: </label>
               <input type="text" class="form-control" style="width: 200px; display: inline-block;" name="width" id="width" placeholder="insert dimensions in inches"/>
+              <p style="display: inline-block;">inches</p>
             </div>
             <div>
               <label for="length" style="display: inline-block; width: 200px; padding-left: 5px">length: </label>
               <input type="text" class="form-control" style="width: 200px; display: inline;" name="length" id="length" placeholder="insert dimensions in inches"/>
+              <p style="display: inline-block;">inches</p>
             </div>
             <div>
               <label for="maxslope" style="display: inline-block; width: 200px; padding-left: 2px;">Maximum Traversible Slope: </label>
               <input type="text" class="form-control" style="width: 200px; display: inline;" name="maxslope" id="maxslope" placeholder="insert dimensions in degrees"/>
+              <p style="display: inline-block;">degrees</p>
             </div>
           </div>
 
@@ -123,6 +103,7 @@
             <label for="noise">No need to avoid noise: 0</label>
             <label for="noise" style="float: right;">Avoid noisy areas: 100</label>
             <input type="range" class="custom-range" min="0" max="100" name="noiseSensitivity" />
+
           </div> -->
           <div>
             <h5>Avoid</h5>
@@ -153,12 +134,12 @@
           </div>
           <input type ="submit" name = "submitbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Submit and Navigate">
         </form>
+        <!-- The php condition is used to make sure this only appears if the user already has a cookie -->
         <?php
         if (isset($_COOKIE['user'])) { ?>
-          <h4>You can export your Cookie to import it to your other devices</h4>
+          <h4 style="margin-top: 5%;">You can export your Cookie to import it to your other devices</h4>
           <button onclick="exportCookie()" class="btn btn-primary btn-lg btn-block mb-2">Export Cookie</button>
-          <div><h3 id="cookiestuff"></h3></div>
-
+          <div style="margin-top:1%; margin-bottom:1%;"><h3 id="cookiestuff" style="background-color: #DCDCDC; padding-left: 30%;"></h3></div>
         <?php }
         ?>
       </div>

@@ -81,6 +81,7 @@ class webAppController {
     if (isset($_COOKIE['user'])) {
       $cookie_name = 'user';
       //echo '<script>console.log($_COOKIE[$cookie_name])</script>';
+
     }
   }
   public function signupProcess() {
@@ -91,6 +92,7 @@ class webAppController {
     //       //echo "$disability";
     //   }
     // }
+
     //Get the POST data from the form, php variable will read the value of the field otherwise set to "off"
     $width = $_POST['width'];
     $length = $_POST['length'];
@@ -132,9 +134,11 @@ class webAppController {
     $disabilityList[] = $heavydoor;
     $disabilityList[] = $loose;
     $disabilityList[] = $uneven;
+
     //Creates JSON object from the list
     header('Content-Type: application/json');
     echo $json = json_encode($disabilityList);
+
     //Hashes the entire JSON into one string
     $cookieString = md5(print_r($json, true));
     //echo $cookieString;
@@ -144,9 +148,11 @@ class webAppController {
     //Setting cookie, returns 1 if set successfully
     $cookie = setcookie('user',$cookie_value, time() + 30*86400, '/');
     //echo $cookie;
+
     //Redirects user to the Browse page
     header('Location:'.BASE_URL.'/browse/');
   }
+
   //When "Import Cookie" is clicked
   public function cookieProcess() {
     //Get the pasted cookie in the field
