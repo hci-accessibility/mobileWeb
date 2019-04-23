@@ -47,7 +47,7 @@
         else if (disability == 'armamputee') {
           document.getElementById('width').value = "36";
           document.getElementById('length').value = "33";
-          document.getElementById('maxslope').value = "";
+          document.getElementById('maxslope').value = "55";
           document.getElementById('stairs').checked = false;
           document.getElementById('narrowsteep').checked = false;
           document.getElementById('pushdoors').checked = false;
@@ -58,7 +58,7 @@
         else if (disability == 'legamputee') {
           document.getElementById('width').value = "25";
           document.getElementById('length').value = "33";
-          document.getElementById('maxslope').value = "";
+          document.getElementById('maxslope').value = "45";
           document.getElementById('stairs').checked = true;
           document.getElementById('narrowsteep').checked = true;
           document.getElementById('pushdoors').checked = false;
@@ -69,7 +69,7 @@
         else if (disability == 'cane') {
           document.getElementById('width').value = "25";
           document.getElementById('length').value = "39";
-          document.getElementById('maxslope').value = "";
+          document.getElementById('maxslope').value = "20";
           document.getElementById('stairs').checked = false;
           document.getElementById('narrowsteep').checked = true;
           document.getElementById('pushdoors').checked = false;
@@ -80,7 +80,7 @@
         else if (disability == 'walker') {
           document.getElementById('width').value = "25";
           document.getElementById('length').value = "64";
-          document.getElementById('maxslope').value = "";
+          document.getElementById('maxslope').value = "25";
           document.getElementById('stairs').checked = true;
           document.getElementById('narrowsteep').checked = true;
           document.getElementById('pushdoors').checked = true;
@@ -91,7 +91,7 @@
         else {
           document.getElementById('width').value = "25";
           document.getElementById('length').value = "35";
-          document.getElementById('maxslope').value = "";
+          document.getElementById('maxslope').value = "25";
           document.getElementById('stairs').checked = false;
           document.getElementById('narrowsteep').checked = true;
           document.getElementById('pushdoors').checked = false;
