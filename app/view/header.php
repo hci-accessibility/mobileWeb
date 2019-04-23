@@ -39,7 +39,7 @@
           document.getElementById('maxslope').value = "45";
           document.getElementById('stairs').checked = true;
           document.getElementById('narrowsteep').checked = true;
-          document.getElementById('pushdoors').checked = true;
+          document.getElementById('pushdoors').checked = false;
           document.getElementById('heavydoor').checked = true;
           document.getElementById('loose').checked = true;
           document.getElementById('uneven').checked = true;
