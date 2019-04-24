@@ -168,6 +168,41 @@ class webAppController {
     //include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
   }
   public function navigation() {
+
+    // Response:
+    // {
+    // path:[
+    // {x: ,
+    //  y: ,
+    // map_id: },
+    // {x: ,
+    //  y: ,
+    // map_id: },
+    // {x: ,
+    //  y: ,
+    // map_id: },
+    // ...]
+    // }
+
+    //sample json result
+    $json =
+    '{
+        path:[
+          {x: 10 ,
+          y: 11,
+          map_id:1 },
+          {x: 12,
+          y: 13,
+          map_id:1 },
+        {x:14 ,
+         y:15 ,
+        map_id:1 }
+        ]
+      }';
+
+      json_decode($json);
+
+
     $pageTitle = 'Navigation';
     $styleSheet = 'styles.css';
     include_once SYSTEM_PATH.'/view/header.php';
