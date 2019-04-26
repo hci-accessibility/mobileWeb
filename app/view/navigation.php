@@ -100,9 +100,9 @@ var centerShift_x = ( canvas.width - img.width*ratio ) / 2;
       // End point (180.5,400)
     ctx.lineTo(300.5,580);
       // Make the line visible
-
     ctx.strokeStyle = "blue";
     ctx.stroke();
+    ctx.fillRect(10,10,1,1);
 };
 
 
