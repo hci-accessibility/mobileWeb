@@ -61,13 +61,13 @@ map_id: },
 }
 -->
 
-
-<canvas id="samplemap">
+<p>Here is the route to your destination:</p>
+<canvas id="samplemap" width = "900" height= "900" border= "1px solid red" float="center">
 <img id= "map" src= "<?= BASE_URL ?>/public/map_sample.JPG" alt="map">
 </canvas>
-<img id= "map2" src= "<?= BASE_URL ?>/public/map_sample.JPG" alt="map" width="500" height="600">
+<!--img id= "map2" src= "<?= BASE_URL ?>/public/map_sample.JPG" alt="map"-->
 
-<style> canvas { width: 1000px; height: 1000px; border: 1px solid red; }</style>
+<!--style> canvas { width: 800px; height: 800px; border: 1px solid red; }</style-->
 
 <script type="text/javascript">
 
@@ -89,13 +89,20 @@ var centerShift_x = ( canvas.width - img.width*ratio ) / 2;
    ctx.drawImage(img, 0,0, img.width, img.height,
                       centerShift_x,centerShift_y,img.width*ratio, img.height*ratio);
 
-  context.beginPath();
-  // Staring point (10,45)
-    context.moveTo(10,45);
-    // End point (180,47)
-  context.lineTo(180,47);
+  ctx.beginPath();
+  // Staring point (50.5,510)
+    ctx.moveTo(50.5,510);
+    // End point (180.5,400)
+  ctx.lineTo(180.5,400);
     // Make the line visible
-    context.stroke();
+    // Staring point (50.5,510)
+      ctx.moveTo(50.5,510);
+      // End point (180.5,400)
+    ctx.lineTo(300.5,580);
+      // Make the line visible
+
+    ctx.strokeStyle = "blue";
+    ctx.stroke();
 };
 
 

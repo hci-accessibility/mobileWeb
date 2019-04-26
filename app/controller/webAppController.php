@@ -185,22 +185,27 @@ class webAppController {
     // }
 
     //sample json result
-    $json =
-    '{
-        path:[
-          {x: 10 ,
-          y: 11,
-          map_id:1 },
-          {x: 12,
-          y: 13,
-          map_id:1 },
-        {x:14 ,
-         y:15 ,
-        map_id:1 }
-        ]
-      }';
+    $arr = array(
+        array(
+            "x" => 10,
+            "y" => 12,
+            "map_id" => 1
+        ),
+        array(
+          "x" => 10,
+          "y" => 12,
+          "map_id" =>1
+        )
+    );
+      json_encode($arr);
+      
+      var_dump(json_decode($arr));
+      // foreach ($arr->path as $mypath)
+      // {
+      //   echo $mypath->x . "\n";
+      // }
 
-      json_decode($json);
+      //json_decode($json);
 
 
     $pageTitle = 'Navigation';
