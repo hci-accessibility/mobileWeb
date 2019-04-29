@@ -62,8 +62,10 @@ map_id: },
 -->
 
 <p>Here is the route to your destination:</p>
+
+<!-- create a canvas with a defualt size to put the image in -->
 <canvas id="samplemap" width = "900" height= "900" border= "1px solid red" float="center">
-<img id= "map" src= "<?= BASE_URL ?>/public/map_sample.JPG" alt="map">
+<img id= "map" src= "<?= BASE_URL ?>/public/McBryde_01.jpg" alt="map">
 </canvas>
 <!--img id= "map2" src= "<?= BASE_URL ?>/public/map_sample.JPG" alt="map"-->
 
@@ -71,24 +73,41 @@ map_id: },
 
 <script type="text/javascript">
 
-window.onload = function() {
+window.onload = draw();
+
+function draw() {
+
+  //JSON.parse(data);
+
+  
+  //resizes the canvas to be the dimensions of the image and raws the image on the canvas
   var canvas = document.getElementById("samplemap");
   var ctx = canvas.getContext("2d");
-  var img = document.getElementById("map");
-  var hRatio = canvas.width / img.width;
-  var vRatio = canvas.height / img.height;
-  var ratio  = Math.min ( hRatio, vRatio );
-  //ctx.drawImage(img, 0, 0);
+   var img = document.getElementById("map");
+  var width = parseInt(img.width);
+ var height = parseInt(img.height);
+ canvas.width = width;
+ canvas.height = height;
+ ctx.drawImage(img, 0, 0, width, height);
+  // var hRatio = canvas.width / img.width;
+  // var vRatio = canvas.height / img.height;
+  // var ratio  = Math.min ( hRatio, vRatio );
+  //ctx.drawImage(img, 0, 0, width, height);
   //ctx.drawImage(img, 0,0, img.width, img.height, 0,0,img.width*ratio, img.height*ratio);
-// ctx.drawImage(img, 0, 0, img.width,    img.height,     // source rectangle
-//                     0, 0, canvas.width, canvas.height); // destination
+ //ctx.drawImage(img, 0, 0, img.width,    img.height,     // source rectangle
+  //                   0, 0, canvas.width, canvas.height); // destination
 
-var centerShift_x = ( canvas.width - img.width*ratio ) / 2;
-   var centerShift_y = ( canvas.height - img.height*ratio ) / 2;
-   ctx.clearRect(0,0,canvas.width, canvas.height);
-   ctx.drawImage(img, 0,0, img.width, img.height,
-                      centerShift_x,centerShift_y,img.width*ratio, img.height*ratio);
+// var centerShift_x = ( canvas.width - img.width*ratio ) / 2;
+//    var centerShift_y = ( canvas.height - img.height*ratio ) / 2;
+   //ctx.clearRect(0,0,canvas.width, canvas.height);
+  //ctx.drawImage(img, 0,0, img.width, img.height,
+  //                   centerShift_x,centerShift_y,img.width*ratio, img.height*ratio);
 
+//if we want rectangle points instead of solid strokes
+ctx.fillStyle = "#3399FF";
+ ctx.fillRect(70.5, 30, 10, 10);
+
+ //drawing straight lines
   ctx.beginPath();
   // Staring point (50.5,510)
     ctx.moveTo(50.5,510);
@@ -100,9 +119,10 @@ var centerShift_x = ( canvas.width - img.width*ratio ) / 2;
       // End point (180.5,400)
     ctx.lineTo(300.5,580);
       // Make the line visible
-    ctx.strokeStyle = "blue";
+    ctx.strokeStyle = "#3399FF";
+    ctx.lineWidth = 5;
     ctx.stroke();
-    ctx.fillRect(10,10,1,1);
+  //  ctx.fillRect(10,10,1,1);
 };
 
 

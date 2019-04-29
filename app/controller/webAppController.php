@@ -197,9 +197,10 @@ class webAppController {
           "map_id" =>1
         )
     );
-      json_encode($arr);
-      
-      var_dump(json_decode($arr));
+
+    $result = json_encode($arr);
+
+      var_dump(json_decode($result));
       // foreach ($arr->path as $mypath)
       // {
       //   echo $mypath->x . "\n";
