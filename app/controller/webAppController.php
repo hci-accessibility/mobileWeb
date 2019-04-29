@@ -96,7 +96,7 @@ class webAppController {
   }
 
   public function signupProcess() {
-    $disabilityList = array ();
+
     // if( isset($_POST['c']) && is_array($_POST['c']) ) {
     //   foreach($_POST['c'] as $disability) {
     //       $disabilityList[] = $disability;
@@ -109,42 +109,53 @@ class webAppController {
     $length = $_POST['length'];
     $maxslope = $_POST['maxslope'];
     if (isset($_POST['stairs'])) {
-      $stairs = $_POST['stairs'];
+      $stairs = "true";
     }
     else {
-      $stairs = "off";
+      $stairs = "false";
     }
     //echo $stairs;
-    $narrowsteep = "off";
+    $narrowsteep = "false";
     if (isset($_POST['narrowsteep'])) {
-      $narrowsteep = $_POST['narrowsteep'];
+      $narrowsteep = "true";
     }
-    $pushdoors = "off";
+    $pushdoors = "false";
     if (isset($_POST['pushdoors'])) {
-      $pushdoors = $_POST['pushdoors'];
+      $pushdoors = "true";
     }
-    $heavydoor = "off";
+    $heavydoor = "false";
     if (isset($_POST['heavydoor'])) {
-      $heavydoor = $_POST['heavydoor'];
+      $heavydoor = "true";
     }
-    $loose = "off";
+    $loose = "false";
     if (isset($_POST['loose'])) {
-      $loose = $_POST['loose'];
+      $loose = "true";
     }
-    $uneven = "off";
+    $uneven = "false";
     if (isset($_POST['uneven'])) {
-      $uneven = $_POST['uneven'];
+      $uneven = "true";
     }
     //echo $handrails;
-    $disabilityList[] = $width;
-    $disabilityList[] = $length;
-    $disabilityList[] = $maxslope;
-    $disabilityList[] = $stairs;
-    $disabilityList[] = $narrowsteep;
-    $disabilityList[] = $pushdoors;
-    $disabilityList[] = $heavydoor;
-    $disabilityList[] = $loose;
-    $disabilityList[] = $uneven;
+    $disabilityList = array (
+      'width'=> $width,
+      'length'=> $length,
+      'maxslope'=> $maxslope,
+      'stairs' => $stairs,
+      'narrow steep stairs' => $narrowsteep,
+      'push doors' => $pushdoors,
+      'heavy doors' => $heavydoor,
+      'loose terrain' => $loose,
+      'uneven terrain' => $uneven
+    );
+    // $disabilityList[] = $width;
+    // $disabilityList[] = $length;
+    // $disabilityList[] = $maxslope;
+    // $disabilityList[] = $stairs;
+    // $disabilityList[] = $narrowsteep;
+    // $disabilityList[] = $pushdoors;
+    // $disabilityList[] = $heavydoor;
+    // $disabilityList[] = $loose;
+    // $disabilityList[] = $uneven;
 
     //Creates JSON object from the list
     header('Content-Type: application/json');
