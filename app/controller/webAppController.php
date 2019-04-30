@@ -1,6 +1,7 @@
 <?php
+include_once '../model/Building.php';
 include_once '../global.php';
-//include SYSTEM_PATH.'/model/model.php'; //uncomment later if we use models
+include SYSTEM_PATH.'/model/model.php'; //uncomment later if we use models
 
 $route = $_GET['route'];
 
@@ -77,7 +78,8 @@ class webAppController {
     if (!isset($_COOKIE['user'])) {
       header('Location:'.BASE_URL.'signup/');
     }
-    $buildings = Building::getBuildings();
+    $build = new Building;
+    $buildings = $build->getBuildings();
     include_once SYSTEM_PATH.'/view/browselocations.php';
 
     include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
@@ -97,7 +99,7 @@ class webAppController {
   }
 
   public function signupProcess() {
-    $disabilityList = array ();
+
     // if( isset($_POST['c']) && is_array($_POST['c']) ) {
     //   foreach($_POST['c'] as $disability) {
     //       $disabilityList[] = $disability;
@@ -107,49 +109,59 @@ class webAppController {
 
     //Get the POST data from the form, php variable will read the value of the field otherwise set to "off"
     $width = $_POST['width'];
-    $length = $_POST['length'];
-    $maxslope = $_POST['maxslope'];
-    if (isset($_POST['stairs'])) {
-      $stairs = $_POST['stairs'];
-    }
-    else {
-      $stairs = "off";
-    }
-    //echo $stairs;
-    $narrowsteep = "off";
-    if (isset($_POST['narrowsteep'])) {
-      $narrowsteep = $_POST['narrowsteep'];
-    }
-    $pushdoors = "off";
-    if (isset($_POST['pushdoors'])) {
-      $pushdoors = $_POST['pushdoors'];
-    }
-    $heavydoor = "off";
-    if (isset($_POST['heavydoor'])) {
-      $heavydoor = $_POST['heavydoor'];
-    }
-    $loose = "off";
-    if (isset($_POST['loose'])) {
-      $loose = $_POST['loose'];
-    }
-    $uneven = "off";
-    if (isset($_POST['uneven'])) {
-      $uneven = $_POST['uneven'];
-    }
-    //echo $handrails;
-    $disabilityList[] = $width;
-    $disabilityList[] = $length;
-    $disabilityList[] = $maxslope;
-    $disabilityList[] = $stairs;
-    $disabilityList[] = $narrowsteep;
-    $disabilityList[] = $pushdoors;
-    $disabilityList[] = $heavydoor;
-    $disabilityList[] = $loose;
-    $disabilityList[] = $uneven;
-
-    //Creates JSON object from the list
-    header('Content-Type: application/json');
-    echo $json = json_encode($disabilityList);
+   $length = $_POST['length'];
+   $maxslope = $_POST['maxslope'];
+   if (isset($_POST['stairs'])) {
+     $stairs = "true";
+   }
+   else {
+     $stairs = "false";
+   }
+   //echo $stairs;
+   $narrowsteep = "false";
+   if (isset($_POST['narrowsteep'])) {
+     $narrowsteep = "true";
+   }
+   $pushdoors = "false";
+   if (isset($_POST['pushdoors'])) {
+     $pushdoors = "true";
+   }
+   $heavydoor = "false";
+   if (isset($_POST['heavydoor'])) {
+     $heavydoor = "true";
+   }
+   $loose = "false";
+   if (isset($_POST['loose'])) {
+     $loose = "true";
+   }
+   $uneven = "false";
+   if (isset($_POST['uneven'])) {
+     $uneven = "true";
+   }
+   //echo $handrails;
+   $disabilityList = array (
+     'width'=> $width,
+     'length'=> $length,
+     'maxslope'=> $maxslope,
+     'stairs' => $stairs,
+     'narrow steep stairs' => $narrowsteep,
+     'push doors' => $pushdoors,
+     'heavy doors' => $heavydoor,
+     'loose terrain' => $loose,
+     'uneven terrain' => $uneven
+   );
+   // $disabilityList[] = $width;
+   // $disabilityList[] = $length;
+   // $disabilityList[] = $maxslope;
+   // $disabilityList[] = $stairs;
+   // $disabilityList[] = $narrowsteep;
+   // $disabilityList[] = $pushdoors;
+   // $disabilityList[] = $heavydoor;
+   // $disabilityList[] = $loose;
+   // $disabilityList[] = $uneven;
+   //Creates JSON object from the list
+   header('Content-Type: application/json');
+   echo $json = json_encode($disabilityList);
 
     //Hashes the entire JSON into one string
     $cookieString = md5(print_r($json, true));
@@ -164,7 +176,7 @@ class webAppController {
     //echo $cookie;
 
     //Redirects user to the Browse page
-    header('Location:'.BASE_URL.'/browse/');
+    header('Location:'.BASE_URL.'/browse');
   }
 
   //When "Import Cookie" is clicked
@@ -172,7 +184,7 @@ class webAppController {
     //Get the pasted cookie in the field
     $importedCookie = $_POST['cookie'];
     //Redirects user to the Browse page
-    header('Location:'.BASE_URL.'/browse/');
+    header('Location:'.BASE_URL.'/browse');
   }
 
   public function report() {

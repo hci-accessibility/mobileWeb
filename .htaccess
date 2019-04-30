@@ -15,3 +15,6 @@ RewriteRule ^cookie/process/?$ app/controller/webAppController.php?route=cookiep
 
 
 RewriteRule ^submitbarrier/?$ app/controller/webAppController.php?route=submitbarrier
+
+RewriteRule ^getrooms/?$ app/controller/modelController.php?route=getRooms [QSA]
+RewriteRule ^navigatexy/?$ app/controller/modelController.php?route=navigatexy

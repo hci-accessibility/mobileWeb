@@ -1,4 +1,5 @@
 
+<body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="home2">Campus Map</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +12,6 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?= BASE_URL?>/home2">Home</a>
-
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?= BASE_URL?>/signup">Preferences</a>
@@ -21,9 +21,6 @@
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="<?= BASE_URL?>/report">Report a Barrier<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about">About </a>
       </li>
     </ul>
   </div>
@@ -73,16 +70,12 @@
         </select>
       </div>
       <h2>Issue</h2>
-<<<<<<< HEAD
-      <textarea class="form-control" id="textArea" name="textArea" rows ="3" placeholder="Please briefly describe the issue here"></textarea>
-      <h2>Authorized Users</h2>
-      <textarea class = "form-control" id="authIdArea" name="authIdArea" rows = "1" placeholder="Authorized users enter id"></textarea>
-=======
       <textarea id="textArea" name="textArea" placeholder="Please briefly describe the issue here..." style="width: 90%; margin:0.5%;"></textarea>
->>>>>>> f733b4cc823ec58043f1f56d8bd7e374fd9b9e97
       <!-- Need to make this red-->
       <p style="color:red;">*Your report will be sent to the office... and will be processed based on the severity/urgency of the issue, thank you.</p>
       <button type="submit" style = "margin-top: 15px;" class="btn btn-primary btn-lg btn-block mb-2">Submit Report</button>
 
     </form>
   </div>
+</body>
+</html>

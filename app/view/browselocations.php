@@ -55,36 +55,31 @@ Current Location
 <button type="button" class="list-group-item list-group-item-action">Major Williams Hall</button>
 <button type="button" class="list-group-item list-group-item-action">Mcbryde Hall</button>
 </ul> -->
-<form action = "home2">
+<form action = "navigatexy" method="post">
   <div class="form-group">
     <h4>From </h4>
-    <select class="form-control form-control-lg" style = "max-height:150px;" id="buildingFromForm">
-      <?php foreach($buildings as $building){?>
-        <option data-id = "<?=$building->buildingId?>"><?=$building->name?></option>
-      <?php}?>
-      <!-- <option data-id="1">Agnew Hall</option>
-      <option data-id ="2">Cowgill Hall</option>
-      <option data-id = "3">Davidson Hall</option> -->
+    <h5>Building</h5>
+    <select class="form-control form-control-lg" style = "max-height:150px;" name = "buildingFromForm" id="buildingFromForm">
+      <option value = "1" >Current Location</option>
+      <option value = "2">Agnew Hall</option>
+      <option value = "3">Cowgill Hall</option>
+    </select>
+    <h5>Room</h5>
+    <select class="form-control form-control-lg" style = "max-height:150px;" name = "roomFromForm" id="roomFromForm">
+      <option value="0">- Select -</option>
     </select>
 
   </div>
   <div class="form-group" style = "max-height:150px;">
     <h4>To </h4>
-    <select class="form-control form-control-lg" id="toForm">
-      <option>Current Location</option>
-      <option>Agnew Hall</option>
-      <option>Cowgill Hall</option>
-      <option>Davidson Hall</option>
-      <option>Derring Hall</option>
-      <option>Durham Hall</option>
-      <option>Goodwin Hall</option>
-      <option>Hahn Hall</option>
-      <option>Holden Hall</option>
-      <option>Latham Hall</option>
-      <option>Lavery Hall</option>
-      <option>Major Williams Hall</option>
-      <option>Mcbryde Hall</option>
-      <option>Turner Hall</option>
+    <select class="form-control form-control-lg" name = "buildingToForm" id="buildingToForm">
+      <option value = "1" >Current Location</option>
+      <option value = "2">Agnew Hall</option>
+      <option value = "3">Cowgill Hall</option>
+    </select>
+    <h5>Room</h5>
+    <select class="form-control form-control-lg" style = "max-height:150px;" name = "roomToForm" id="roomToForm">
+      <option value="0">- Select -</option>
     </select>
   </div>
   <button type="submit" style = "margin-top: 15px;" class="btn btn-primary btn-lg btn-block mb-2">Navigate</button>
