@@ -59,10 +59,25 @@ else if($route == 'navigatexy'){
     $x2 = $row[4];
     $y2 = $row[5];
 
+    $cookey = $_COOKIE['user'];
+    echo $cookey;
+    $userdata = json_decode($cookey, JSON_UNESCAPED_SLASHES);
+    //$userdata = json_encode($userdata, JSON_UNESCAPED_SLASHES);
     $start = array('x'=>$x1, 'y'=>$y1, 'map_id'=>$mapid1);
     $goal = array('x'=>$x2, 'y'=>$y2, 'map_id'=>$mapid2);
-    $data = array('start'=>$start, 'goal'=>$goal); 
-    echo json_encode($data);
+    $data = array('profile'=>$userdata, 'start'=>$start, 'goal'=>$goal);
+    $postData = json_encode($data, JSON_UNESCAPED_SLASHES);
+    //echo $postData;
+    $url ="http://localhost:18590/nav_xy_xy";
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER,
+      ['Content-Type: application/json']
+    );
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+
+    $result = curl_exec($ch);
+    curl_close($ch);
+    echo $result;
 }
-
-

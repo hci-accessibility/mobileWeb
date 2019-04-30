@@ -2,7 +2,7 @@
 include_once '../model/Building.php';
 include_once '../global.php';
 
-include SYSTEM_PATH.'/model/model.php'; //uncomment later if we use models
+//include SYSTEM_PATH.'/model/model.php'; //uncomment later if we use models
 $route = $_GET['route'];
 $ac = new webAppController();
 if($route == 'home') {
@@ -32,8 +32,17 @@ elseif($route == '') {
 elseif($route == 'report') {
   $ac->report();
 }
+else if($route == 'navigatexy'){
+  $ac->navigatexy();
+}
+else if($route == 'navigate'){
+  $ac->navigate();
+}
 elseif($route == 'navigation') {
   $ac->navigation();
+}
+elseif($route == 'getroute'){
+  $ac->getRoute();
 }
 elseif($route == 'submitbarrier') {
   $ac->submitBarrier();
@@ -75,6 +84,7 @@ class webAppController {
     $buildings = $build->getBuildings();
     include_once SYSTEM_PATH.'/view/browselocations.php';
     include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
+    //echo $_COOKIE['user'];
   }
   public function signup() {
     $pageTitle = 'Sign Up';
@@ -152,17 +162,23 @@ class webAppController {
 
     //Creates JSON object from the list
     header('Content-Type: application/json');
-    echo $json = json_encode($disabilityList);
-
+    //echo $disabilityList;
+    $json = json_encode($disabilityList);
+    //echo $json;
     //Hashes the entire JSON into one string
-    $cookieString = md5(print_r($json, true));
+    //$cookieString = md5(print_r($json, true));
     //echo $cookieString;
     //Hashed string becomes cookie value
-    $cookie_value = $cookieString;
+    //$cookie_value = $json;
     //echo $cookie_value;
     //Setting cookie, returns 1 if set successfully
-    $cookie = setcookie('user',$cookie_value, time() + 30*86400, '/');
-    //echo $cookie;
+
+    // empty value and expiration one hour before
+    //$cookie = setcookie('user', '', time() - 3600);
+
+    //$cookie = setcookie('user', $json, time() + 30*86400, '../');
+    $cookie = setcookie('user', $json, time() + 60, '/');
+    //echo $_COOKIE['user'];
 
     //Redirects user to the Browse page
     header('Location:'.BASE_URL.'/browse');
@@ -181,6 +197,60 @@ class webAppController {
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/reportbarrier.php';
     include_once SYSTEM_PATH.'/view/footer.php'; //uncomment when footer is created
+  }
+  public function navigatexy(){
+      echo $_COOKIE['user'];
+      $bid1 = $_POST['buildingFromForm'];
+      $rid1 = $_POST['roomFromForm'];
+      $bid2 = $_POST['buildingToForm'];
+      $rid2 = $_POST['roomToForm'];
+
+      $dbconn = pg_connect("dbname=barrierdb host=localhost port=5432 user=barrierdb password='p1oTtgres b2aSrier b3aDkend'");
+      $result = pg_query($dbconn, "SELECT * FROM rooms WHERE room_id = $rid1");
+      $row = pg_fetch_row($result);
+      $mapid1 = $row[1];
+      $x1 = (int)$row[4];
+      $y1 = (int)$row[5];
+       $result = pg_query($dbconn, "SELECT * FROM rooms WHERE room_id = $rid2");
+      $row = pg_fetch_row($result);
+      $mapid2 = $row[1];
+      $x2 = (int)$row[4];
+      $y2 = (int)$row[5];
+
+      $cookey = $_COOKIE['user'];
+      //echo $cookey;
+      $userdata = json_decode($cookey, JSON_UNESCAPED_SLASHES);
+      //$userdata = json_encode($userdata, JSON_UNESCAPED_SLASHES);
+      $start = array('x'=>$x1, 'y'=>$y1, 'map_id'=>$mapid1);
+      $goal = array('x'=>$x2, 'y'=>$y2, 'map_id'=>$mapid2);
+      $data = array('profile'=>$userdata, 'start'=>$start, 'goal'=>$goal);
+      $postData = json_encode($data);
+      //echo $postData;
+      $url ="http://localhost:18590/nav_xy_xy";
+      $ch = curl_init($url);
+      curl_setopt_array($ch, array(
+        CURLOPT_POST => TRUE,
+        CURLOPT_RETURNTRANSFER => TRUE,
+        CURLOPT_HTTPHEADER => array(
+          'Content-Type: application/json'
+        ),
+        CURLOPT_POSTFIELDS => json_encode($data)
+      ));
+
+// Send the request
+      $response = curl_exec($ch);
+      curl_close($ch);
+      $cookie = setcookie('route', $response, time() + 30*86400, '../');
+      //echo $response;
+      $pageTitle = 'Navigation';
+      $styleSheet = 'styles.css';
+      include_once SYSTEM_PATH.'/view/header.php';
+      include_once SYSTEM_PATH.'/view/navigation.php';
+      include_once SYSTEM_PATH.'/view/footer.php';
+      echo '<script type="text/javascript">draw()</script>';
+  }
+  public function getRoute(){
+    echo $_COOKIE['route'];
   }
   public function navigation() {
 

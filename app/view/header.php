@@ -16,10 +16,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="<?=BASE_URL ?>/public/browselocations.js"></script>
+    <script type="text/javascript" src="<?=BASE_URL ?>/public/draw.js"></script>
     <script>
       function exportCookie() {
         /* Get the text field */
-        var copyCookie = "<?php echo $_COOKIE['user']; ?>";
+        var copyCookie = "feature coming soon";
         console.log(copyCookie);
         document.getElementById('cookiestuff').innerHTML = copyCookie;
       }
