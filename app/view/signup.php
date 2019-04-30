@@ -1,4 +1,4 @@
-
+  <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="home2">Campus Map</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -116,11 +116,11 @@
             </div>
             <div>
               <label for="narrowsteep" style="width: 250px;">Narrow or Steep Stairs</label>
-              <input type="checkbox" name="narrowsteep" value="narrowsteep" id="narrowsteep" checked data-toggle="toggle" data-size="small">
+              <input type="checkbox" disabled="disabled" name="narrowsteep" value="narrowsteep" id="narrowsteep" checked data-toggle="toggle" data-size="small">
             </div>
             <div style="background-color: #DCDCDC;">
               <label for="pushdoors" style="width: 250px;">Non-activated Doors</label>
-              <input type="checkbox" name="pushdoors" value="pushdoors" id="pushdoors" checked data-toggle="toggle" data-size="small">
+              <input type="checkbox" disabled="disabled" name="pushdoors" value="pushdoors" id="pushdoors" checked data-toggle="toggle" data-size="small">
             </div>
             <div>
               <label for="heavydoor" style="width: 250px;">Heavy Doors</label>
@@ -128,21 +128,21 @@
             </div>
             <div style="background-color: #DCDCDC;">
               <label for="loose" style="width: 250px;">"Loose" Terrain (Shifts Under Foot)</label>
-              <input type="checkbox" name="loose" value="loose" id="loose" checked data-toggle="toggle" data-size="small">
+              <input type="checkbox" disabled="disabled" name="loose" value="loose" id="loose" checked data-toggle="toggle" data-size="small">
             </div>
             <div>
               <label for="uneven" style="width: 250px;">Uneven Terrain</label>
-              <input type="checkbox" name="uneven" value="uneven" id="uneven" checked data-toggle="toggle" data-size="small">
+              <input type="checkbox" disabled="disabled" name="uneven" value="uneven" id="uneven" checked data-toggle="toggle" data-size="small">
             </div>
           </div>
           <input type ="submit" name = "submitbutton" class="btn btn-primary btn-lg btn-block mb-2" value = "Submit and Navigate">
         </form>
+        <!-- The php condition is used to make sure this only appears if the user already has a cookie -->
         <?php
         if (isset($_COOKIE['user'])) { ?>
           <h4 style="margin-top: 5%;">You can export your Cookie to import it to your other devices</h4>
           <button onclick="exportCookie()" class="btn btn-primary btn-lg btn-block mb-2">Export Cookie</button>
           <div style="margin-top:1%; margin-bottom:1%;"><h3 id="cookiestuff" style="background-color: #DCDCDC; padding-left: 30%;"></h3></div>
-
         <?php }
         ?>
       </div>

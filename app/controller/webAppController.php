@@ -109,59 +109,60 @@ class webAppController {
 
     //Get the POST data from the form, php variable will read the value of the field otherwise set to "off"
     $width = $_POST['width'];
-   $length = $_POST['length'];
-   $maxslope = $_POST['maxslope'];
-   if (isset($_POST['stairs'])) {
-     $stairs = "true";
-   }
-   else {
-     $stairs = "false";
-   }
-   //echo $stairs;
-   $narrowsteep = "false";
-   if (isset($_POST['narrowsteep'])) {
-     $narrowsteep = "true";
-   }
-   $pushdoors = "false";
-   if (isset($_POST['pushdoors'])) {
-     $pushdoors = "true";
-   }
-   $heavydoor = "false";
-   if (isset($_POST['heavydoor'])) {
-     $heavydoor = "true";
-   }
-   $loose = "false";
-   if (isset($_POST['loose'])) {
-     $loose = "true";
-   }
-   $uneven = "false";
-   if (isset($_POST['uneven'])) {
-     $uneven = "true";
-   }
-   //echo $handrails;
-   $disabilityList = array (
-     'width'=> $width,
-     'length'=> $length,
-     'maxslope'=> $maxslope,
-     'stairs' => $stairs,
-     'narrow steep stairs' => $narrowsteep,
-     'push doors' => $pushdoors,
-     'heavy doors' => $heavydoor,
-     'loose terrain' => $loose,
-     'uneven terrain' => $uneven
-   );
-   // $disabilityList[] = $width;
-   // $disabilityList[] = $length;
-   // $disabilityList[] = $maxslope;
-   // $disabilityList[] = $stairs;
-   // $disabilityList[] = $narrowsteep;
-   // $disabilityList[] = $pushdoors;
-   // $disabilityList[] = $heavydoor;
-   // $disabilityList[] = $loose;
-   // $disabilityList[] = $uneven;
-   //Creates JSON object from the list
-   header('Content-Type: application/json');
-   echo $json = json_encode($disabilityList);
+    $length = $_POST['length'];
+    $maxslope = $_POST['maxslope'];
+    if (isset($_POST['stairs'])) {
+      $stairs = "true";
+    }
+    else {
+      $stairs = "false";
+    }
+    //echo $stairs;
+    $narrowsteep = "false";
+    if (isset($_POST['narrowsteep'])) {
+      $narrowsteep = "true";
+    }
+    $pushdoors = "false";
+    if (isset($_POST['pushdoors'])) {
+      $pushdoors = "true";
+    }
+    $heavydoor = "false";
+    if (isset($_POST['heavydoor'])) {
+      $heavydoor = "true";
+    }
+    $loose = "false";
+    if (isset($_POST['loose'])) {
+      $loose = "true";
+    }
+    $uneven = "false";
+    if (isset($_POST['uneven'])) {
+      $uneven = "true";
+    }
+    //echo $handrails;
+    $disabilityList = array (
+      'width'=> $width,
+      'length'=> $length,
+      'maxslope'=> $maxslope,
+      'stairs' => $stairs,
+      'narrow steep stairs' => $narrowsteep,
+      'push doors' => $pushdoors,
+      'heavy doors' => $heavydoor,
+      'loose terrain' => $loose,
+      'uneven terrain' => $uneven
+    );
+    // $disabilityList[] = $width;
+    // $disabilityList[] = $length;
+    // $disabilityList[] = $maxslope;
+    // $disabilityList[] = $stairs;
+    // $disabilityList[] = $narrowsteep;
+    // $disabilityList[] = $pushdoors;
+    // $disabilityList[] = $heavydoor;
+    // $disabilityList[] = $loose;
+    // $disabilityList[] = $uneven;
+
+    //Creates JSON object from the list
+    header('Content-Type: application/json');
+    echo $json = json_encode($disabilityList);
 
     //Hashes the entire JSON into one string
     $cookieString = md5(print_r($json, true));
